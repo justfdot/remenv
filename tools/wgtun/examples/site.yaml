@@ -1,0 +1,23 @@
+# A fixture only: substitute every address, hostname, public key, and interface.
+# Private WireGuard keys are deliberately not accepted or stored here.
+version: 1
+tag: WGTUN:ACME-01
+hub:
+  profile: hub
+  interface: wg-acme-01
+  address: 10.254.21.1/30
+  listen_port: 13231
+  public_key: REPLACE_WITH_HUB_PUBLIC_KEY
+  allowed_addresses:
+    - 10.21.0.0/16
+site:
+  profile: acme-01
+  interface: wg-hub
+  address: 10.254.21.2/30
+  endpoint: hub.example.net:13231
+  public_key: REPLACE_WITH_SITE_PUBLIC_KEY
+  keepalive_seconds: 25
+  lan_networks:
+    - 192.168.88.0/24
+  allowed_addresses:
+    - 10.250.0.0/23
