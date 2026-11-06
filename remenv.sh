@@ -7,8 +7,8 @@ export REMENV_ROOT="${REMENV_ROOT:-$HOME/code/remenv}"
 
 # ~/.local/bin — сюда bootstrap кладёт свои бинарники и линки на скрипты
 case ":$PATH:" in
-  *":$HOME/.local/bin:"*) ;;
-  *) PATH="$HOME/.local/bin:$PATH" ;;
+*":$HOME/.local/bin:"*) ;;
+*) PATH="$HOME/.local/bin:$PATH" ;;
 esac
 export PATH
 
